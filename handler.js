@@ -541,11 +541,11 @@ export async function handler(chatUpdate) {
                 else
                     m.exp += xp
                 if (!isPrems && plugin.diamond && global.db.data.users[m.sender].diamond < plugin.diamond * 1) {
-                     this.reply(m.chat, `💝 Queen Hentai 💝 money finished \n use the following 💝 Queen Hentai 💝 command to buy money \n*${usedPrefix}todiamond* <amount`, m)
+                     this.reply(m.chat, `Devil Madu money finished \n use the following Devil Madu command to buy money \n*${usedPrefix}todiamond* <amount`, m)
                     continue // Limit habis
                 }
                 if (plugin.level > _user.level) {
-                    this.reply(m.chat, `💝 Queen Hentai 💝 required level ${plugin.level} to use this 💝 Queen Hentai 💝 command. \nyour level ${_user.level}`, m)
+                    this.reply(m.chat, `Devil Madu required level ${plugin.level} to use this Devil Madu command. \nyour level ${_user.level}`, m)
                     continue // If the level has not been reached
                 }
                 let extra = {
@@ -587,7 +587,7 @@ export async function handler(chatUpdate) {
                             for (let [jid] of global.owner.filter(([number, _, isDeveloper]) => isDeveloper && number)) {
                                 let data = (await conn.onWhatsApp(jid))[0] || {}
                                 if (data.exists)
-                                    m.reply(`*💝 Queen Hentai 💝 Plugin:* ${m.plugin}\n*💝 Queen Hentai 💝 Sender:* ${m.sender}\n*💝 Queen Hentai 💝 Chat:* ${m.chat}\n*💝 Queen Hentai 💝 Command:* ${usedPrefix}${command} ${args.join(' ')}\n💝 Queen Hentai 💝 *Error Logs:*\n\n\`\`\`${text}\`\`\``.trim(), data.jid)
+                                    m.reply(`*Devil Madu Plugin:* ${m.plugin}\n*Devil Madu Sender:* ${m.sender}\n*Devil Madu Chat:* ${m.chat}\n*Devil Madu Command:* ${usedPrefix}${command} ${args.join(' ')}\nDevil Madu *Error Logs:*\n\n\`\`\`${text}\`\`\``.trim(), data.jid)
                             }
                         m.reply(text)
                     }
@@ -760,11 +760,11 @@ export async function participantsUpdate({ id, participants, action }) {
             break;    
         case 'promote':
         case 'promover':
-            text = (chat.sPromote || this.spromote || conn.spromote || '@user is now administrador by 💝 Queen Hentai 💝')
+            text = (chat.sPromote || this.spromote || conn.spromote || '@user is now administrador by Devil Madu')
         case 'demote':
         case 'degradar':
             if (!text)
-                text = (chat.sDemote || this.sdemote || conn.sdemote || '@user not now an administrador 💝 Queen Hentai 💝')
+                text = (chat.sDemote || this.sdemote || conn.sdemote || '@user not now an administrador Devil Madu')
             text = text.replace('@user', '@' + participants[0].split('@')[0])
             if (chat.detect)
                 this.sendMessage(id, { text, mentions: this.parseMention(text) })
@@ -783,14 +783,14 @@ export async function groupsUpdate(groupsUpdate) {
         if (!id) continue
         let chats = global.db.data.chats[id], text = ''
         if (!chats?.detect) continue
-        if (groupUpdate.desc) text = (chats.sDesc || this.sDesc || conn.sDesc || '```Description has been changed by 💝 Queen Hentai 💝 to```\n@desc').replace('@desc', groupUpdate.desc)
-        if (groupUpdate.subject) text = (chats.sSubject || this.sSubject || conn.sSubject || '```Subject has been changed by 💝 Queen Hentai 💝 to```\n@subject').replace('@subject', groupUpdate.subject)
-        if (groupUpdate.icon) text = (chats.sIcon || this.sIcon || conn.sIcon || '```Icon has been changed by 💝 Queen Hentai 💝 to```').replace('@icon', groupUpdate.icon)
-        if (groupUpdate.revoke) text = (chats.sRevoke || this.sRevoke || conn.sRevoke || '```Group link has been changed by 💝 Queen Hentai 💝 to```\n@revoke').replace('@revoke', groupUpdate.revoke)
-        if (groupUpdate.announce == true) text = (chats.sAnnounceOn || this.sAnnounceOn || conn.sAnnounceOn || '*Group has been closed by 💝 Queen Hentai 💝 WA BOT*')
-        if (groupUpdate.announce == false) text = (chats.sAnnounceOff || this.sAnnounceOff || conn.sAnnounceOff || '*Group has been open by 💝 Queen Hentai 💝 WA BOT*')
-        if (groupUpdate.restrict == true) text = (chats.sRestrictOn || this.sRestrictOn || conn.sRestrictOn || '*Group has been all participants by 💝 Queen Hentai 💝 WA BOT*')
-        if (groupUpdate.restrict == false) text = (chats.sRestrictOff || this.sRestrictOff || conn.sRestrictOff || '*Group has been only admin by 💝 Queen Hentai 💝 WA BOT*')
+        if (groupUpdate.desc) text = (chats.sDesc || this.sDesc || conn.sDesc || '```Description has been changed by Devil Madu to```\n@desc').replace('@desc', groupUpdate.desc)
+        if (groupUpdate.subject) text = (chats.sSubject || this.sSubject || conn.sSubject || '```Subject has been changed by Devil Madu to```\n@subject').replace('@subject', groupUpdate.subject)
+        if (groupUpdate.icon) text = (chats.sIcon || this.sIcon || conn.sIcon || '```Icon has been changed by Devil Madu to```').replace('@icon', groupUpdate.icon)
+        if (groupUpdate.revoke) text = (chats.sRevoke || this.sRevoke || conn.sRevoke || '```Group link has been changed by Devil Madu to```\n@revoke').replace('@revoke', groupUpdate.revoke)
+        if (groupUpdate.announce == true) text = (chats.sAnnounceOn || this.sAnnounceOn || conn.sAnnounceOn || '*Group has been closed by Devil Madu WA BOT*')
+        if (groupUpdate.announce == false) text = (chats.sAnnounceOff || this.sAnnounceOff || conn.sAnnounceOff || '*Group has been open by Devil Madu WA BOT*')
+        if (groupUpdate.restrict == true) text = (chats.sRestrictOn || this.sRestrictOn || conn.sRestrictOn || '*Group has been all participants by Devil Madu WA BOT*')
+        if (groupUpdate.restrict == false) text = (chats.sRestrictOff || this.sRestrictOff || conn.sRestrictOff || '*Group has been only admin by Devil Madu WA BOT*')
         if (!text) continue
         await this.sendMessage(id, { text, mentions: this.parseMention(text) })
     }
@@ -808,7 +808,7 @@ export async function deleteUpdate(message) {
         if (chat.delete)
             return 
             await this.reply(msg.chat, `
-≡  💝 Queen Hentai 💝 WA BOT deleted a message.
+≡  Devil Madu WA BOT deleted a message.
 ┌─⊷ 🇱🇰 𝘼𝙉𝙏𝙄 𝘿𝙀𝙇𝙀𝙏𝙀 🇱🇰
 🩸 *Number :* @${participant.split`@`[0]} 🩸
 └─────────────
@@ -826,16 +826,16 @@ export async function deleteUpdate(message) {
 
 global.dfail = (type, m, conn) => {
     let msg = {
-        rowner: '*ᴏɴʟʏ 💝 Queen Hentai 💝 ᴅᴇᴠᴇʟᴏᴘᴇʀ* • 🇱🇰 This command can only be used by the *Creator of 💝 Dinuwa Official²⁰²³ 💝*',
-        owner: '*ᴏɴʟʏ 💝 Queen Hentai 💝 ᴏᴡɴᴇʀ* • 🇱🇰 This command can only be used by the *Bot Owner 💝 Dinuwa Official²⁰²³ 💝',
-        mods: '*ᴏɴʟʏ 💝 Queen Hentai 💝 ᴍᴏᴅᴇʀᴀᴛᴏʀ* •🇱🇰 This function is only for *For 💝 Queen Hentai 💝 Bot moderators*',
-        premium: '*ᴏɴʟʏ 💝 Queen Hentai 💝 ᴘʀᴇᴍɪᴜᴍ User* • 🇱🇰 This command is for *💝 Queen Hentai 💝 Premium members only',
-        group: '*💝 Queen Hentai 💝 ɢʀᴏᴜᴘ ᴄʜᴀᴛ* • 🇱🇰 This command can only be used in 💝 Queen Hentai 💝 groups',
-        private: '*💝 Queen Hentai 💝 ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛ* • 🇱🇰 This command can only be used in the *private chat of the 💝 Queen Hentai 💝 Bot*',
-        admin: '*ᴏɴʟʏ 💝 Queen Hentai 💝 ᴀᴅᴍɪɴ* • 🇱🇰 This command is only for *💝 Queen Hentai 💝 Group Admins*',
-        botAdmin: '*ᴏɴʟʏ 💝 Queen Hentai 💝 ʙᴏᴛ ᴀᴅᴍɪɴ* • 🇱🇰 To use this command I must be *💝 Queen Hentai 💝 Admin!*',
-        unreg: '*ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ʀᴇɢɪsᴛᴇʀᴇᴅ with 💝 Queen Hentai 💝* • 🇱🇰 Sign in to 💝 Queen Hentai 💝,use this feature Type කරපන්:\n\n*/reg name.age*\n\n🇱🇰 Example : *.reg DINUWA.17*', 
-        restrict: '*ʀᴇsᴛʀɪᴄᴛby 💝 Queen Hentai 💝 WA BOT* • This feature is *disabled*by 💝 Queen Hentai 💝 WA BOT',
+        rowner: '*ᴏɴʟʏ Devil Madu ᴅᴇᴠᴇʟᴏᴘᴇʀ* • 🇱🇰 This command can only be used by the *Creator of 💝 Dinuwa Official²⁰²³ 💝*',
+        owner: '*ᴏɴʟʏ Devil Madu ᴏᴡɴᴇʀ* • 🇱🇰 This command can only be used by the *Bot Owner 💝 Dinuwa Official²⁰²³ 💝',
+        mods: '*ᴏɴʟʏ Devil Madu ᴍᴏᴅᴇʀᴀᴛᴏʀ* •🇱🇰 This function is only for *For Devil Madu Bot moderators*',
+        premium: '*ᴏɴʟʏ Devil Madu ᴘʀᴇᴍɪᴜᴍ User* • 🇱🇰 This command is for *Devil Madu Premium members only',
+        group: '*Devil Madu ɢʀᴏᴜᴘ ᴄʜᴀᴛ* • 🇱🇰 This command can only be used in Devil Madu groups',
+        private: '*Devil Madu ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛ* • 🇱🇰 This command can only be used in the *private chat of the Devil Madu Bot*',
+        admin: '*ᴏɴʟʏ Devil Madu ᴀᴅᴍɪɴ* • 🇱🇰 This command is only for *Devil Madu Group Admins*',
+        botAdmin: '*ᴏɴʟʏ Devil Madu ʙᴏᴛ ᴀᴅᴍɪɴ* • 🇱🇰 To use this command I must be *Devil Madu Admin!*',
+        unreg: '*ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ʀᴇɢɪsᴛᴇʀᴇᴅ with Devil Madu* • 🇱🇰 Sign in to Devil Madu,use this feature Type කරපන්:\n\n*/reg name.age*\n\n🇱🇰 Example : *.reg DINUWA.17*', 
+        restrict: '*ʀᴇsᴛʀɪᴄᴛby Devil Madu WA BOT* • This feature is *disabled*by Devil Madu WA BOT',
     }[type]
     if (msg) return m.reply(msg)
 }
